@@ -1,0 +1,262 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset and basic styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+/* Header Styling */
+.header{
+    background: #fff;
+}
+
+/* Grid Container */
+.container {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.4fr) auto;     /* Flexible columns */
+    grid-template-rows: auto auto;                        /* Two rows */
+    column-gap: 50px;  
+    align-items: center;
+    width: 100%;
+}
+
+/* Yelp Logo (Left Side) */
+.logo {
+    grid-column: 1;                      
+    grid-row: 1 / span 2;                
+    display: flex;
+    align-items: center;                
+    justify-content: center;            
+    overflow: hidden; 
+}
+
+.logo img {
+    width: 60%;                         
+    height: auto;                        
+}
+
+/* Top Right Links */
+.top-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.top-links a , .loc-nav a {
+    color: #0056b3;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.top-links a:hover , .loc-nav a:hover {
+    color: #ff4d4d;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;                          /* Spacing between elements */
+    padding-bottom: 10px;
+    padding-right: 55px;
+    width: auto;
+}
+
+.search-for-group, .near-group {
+    flex-grow: 1;
+}
+
+.search-for-group {
+    padding-right: 0.5em;
+}
+
+.search-section label {
+    display: flex;
+    font-size: 14px;
+    color: gray;
+    justify-content: space-between;
+}
+
+.red-text {
+    color: #c41200;                      /* Yelp red */
+    font-weight: bold;
+}
+
+.search-section input {
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.near-group input::placeholder {
+    color: black;             
+    opacity: 1;                
+}
+
+.search-section button {
+    all: unset;                         
+}
+
+.search-section button img {
+    width: 40px;
+    height: 40px;
+}
+
+.main{
+    border-top: 2px solid #ccc;    /* Top border */
+    border-right: 2px solid #ccc;  /* Right border */
+}
+
+.loc-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+    padding: 15px 0;
+    border-bottom: 2px solid #ccc;
+    flex-wrap: wrap;
+}
+
+.loc-nav a{
+    white-space: nowrap;
+}
+
+.tagline{
+    font-family: 'Montserrat', sans-serif;  /* Apply Montserrat font */
+    color: #c41200; 
+    font-weight: normal;
+    padding: 20px;
+    margin: 0 15px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;      /* Space out content */
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-content-container{
+    display: grid;
+    grid-template-columns: auto auto;     /* Flexible columns */
+    grid-template-rows: auto auto;                        /* Two rows */
+    column-gap: 50px;  
+    align-items: center;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: minmax(100px, 0.3fr) auto;  
+        column-gap: 20px;
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        width: 100px;                         
+        height: auto;
+    }
+
+    .top-links {
+        font-size: 13px;                      
+        padding-right: 10px;
+    }
+
+    .search-section {
+        padding: 0 15px;                       
+    }
+}
+
+/* For smaller screens, keep two columns */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: minmax(80px, 0.3fr) auto;    
+        column-gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        width: 80px;                          
+        height: auto;
+    }
+
+    .top-links {
+        font-size: 12px;                      
+    }
+
+    .search-section {
+        flex-direction: row;                  
+        gap: 10px;
+    }
+
+    .search-section input {
+        padding: 8px;
+    }
+
+    .search-section button {
+        width: auto;
+    }
+}
+
+/* Mobile view adjustments: Display search section in 3 rows */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;            /* Single column layout */
+        padding-bottom: 10px;
+    }
+
+    .top-links{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-section {
+        flex-direction: column;                /* Stack in 3 rows */
+        align-items: center;                   /* Center-align the content */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .search-for-group, .near-group, .search-section button {
+        width: 100%;
+        max-width: 400px;                      /* Optional: max width for consistency */
+    }
+
+    .search-section input {
+        width: 100%;
+        padding: 12px;                         /* Larger padding for better touch experience */
+    }
+
+    .search-section button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .search-section button img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .loc-nav{
+        flex-direction: row;
+        gap: 10px;
+    }
+}

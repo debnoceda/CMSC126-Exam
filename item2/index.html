@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp Header Grid Layout</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="container">
+
+            <div class="logo">
+                <img src="styles/yelp-logo.png" alt="Yelp Logo">
+            </div>
+
+            <div class="top-links">
+                <a href="#">Member Search</a> |
+                <a href="#">Join Yelp!</a> |
+                <a href="#">Log In</a>
+            </div>
+
+            <div class="search-section">
+                <div class="search-for-group">
+                    <div class="label-container">
+                        <label for="search-for">
+                            <span class="red-text">Search for</span> (e.g., taco, salon, Max's)
+                        </label>
+                    </div>
+                    <input type="text" id="search-for" placeholder="">  
+                </div>
+                
+                <div class="near-group">
+                    <label for="near"><span class="red-text">Near</span> (City, State or Zip)</label>
+                    <input type="text" id="near" placeholder="San Francisco, CA 94101">
+                </div>
+
+                <button>
+                    <img src="search.png" alt="Search">
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Other Location Navigation -->
+        <nav class="loc-nav">
+            <h2 class="red-text">Yelp San Francisco</h2>
+            <div>
+                Other Cities | 
+                <a href="#">Boston</a> | 
+                <a href="#">Chicago</a> | 
+                <a href="#">Seattle</a> | 
+                <a href="#">Los Angeles</a> | 
+                <a href="#">New York</a> | 
+                <a href="#">Atlanta</a> | 
+                <a href="#">Austin</a> | 
+                <a href="#">more »</a>
+            </div>
+        </nav>
+
+        <!-- Tagline -->
+        <h1 class="tagline">
+            Yelp is the fun and easy way to find, review and talk about what's great – and not so great – in your area.
+        </h1>
+
+        <div class="main-content-container">
+
+        </div>
+        
+    </main>
+
+</body>
+</html>
