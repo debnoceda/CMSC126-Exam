@@ -6,7 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Poppins, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -55,16 +55,22 @@ body {
     font-size: 14px;
 }
 
-.top-links a , .loc-nav a , .username , .pick-content a, 
-.see-more a {
+.top-links a , .loc-nav a {
     color: #0056b3;
     text-decoration: none;
     margin: 0 8px;
     transition: color 0.3s;
 }
 
+.username, .pick-content a, .see-more a {
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
 .top-links a:hover , .loc-nav a:hover , .username:hover, .pick-content a:hover,
-.see-more a:hover {
+.see-more a:hover , .list-details a:hover , .card-details .featured-username:hover {
     color: #ff4d4d;
 }
 
@@ -88,7 +94,7 @@ body {
 
 .search-section label {
     display: flex;
-    font-size: 14px;
+    font-size: 16px;
     color: gray;
     justify-content: space-between;
 }
@@ -102,7 +108,7 @@ body {
     padding: 10px;
     border: 2px solid #000000;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -141,6 +147,7 @@ body {
 
 .tagline{
     font-family: 'Montserrat', sans-serif;  /* Apply Montserrat font */
+    font-size: 1.5em;
     color: #c41200; 
     font-weight: normal;
     padding: 20px;
@@ -156,7 +163,6 @@ body {
 .main-content-container{
     display: grid;
     grid-template-columns: 1fr 1fr;     /* Flexible columns */
-    align-items: center;
     width: 100%;
     margin: 0 15px;
 }
@@ -165,6 +171,7 @@ body {
     display:grid;
     grid-template-rows: 120px auto;
     padding-right: 25px;
+    height: 100%;
 }
 
 .column1-grid1{
@@ -244,11 +251,10 @@ body {
 /* Title and Review Styling */
 .card h2 {
     font-size: 20px;
-    color: #333;
 }
 
 .card p {
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
 }
 
@@ -266,7 +272,7 @@ body {
 }
 
 .card li {
-    font-size: 14px;
+    font-size: 16px;
     color: #0056b3;
 }
 
@@ -279,7 +285,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .see-more span {
@@ -293,6 +299,14 @@ body {
     margin-right: 20px;
     margin-top: 20px;
     border-left: 2px solid #ccc;
+    height: 100%;
+}
+
+.tilted-star{
+    width: 30px;
+    vertical-align: middle;
+    transform: rotate(-20deg);
+    margin-left: 20px;
 }
 
 .pick-container {
@@ -320,9 +334,81 @@ body {
 }
 
 .pick-content {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #000000;
     margin-top: 5px;
+}
+
+.column2-grid2{
+    padding-top: 10px;
+}
+
+.featured-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2x2 grid layout */
+    grid-gap: 20px;                         /* Space between cards */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-right: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Card Styling */
+.featured-card {
+    display: flex;
+}
+
+/* Image Styling */
+.featured-card img , .list-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Card Details Styling */
+.card-details {
+    padding: 15px;
+}
+
+/* Username Styling */
+.card-details .featured-username , .list-details a{
+    font-size: 16px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Description Styling */
+.card-details p {
+    font-size: 16px;
+    color: #242323;
+    margin: 0;
+    font-style: italic;
+}
+
+.column2-grid3{
+    padding-top: 10px;
+}
+
+.fresh-lists{
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.list-item{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.list-details{
+    align-items: flex-end;
+}
+
+.list-details p{
+    font-size: 16px;
+    color: #242323;
+    margin: 0;
 }
 
 
@@ -377,6 +463,30 @@ body {
 
     .search-section button {
         width: auto;
+    }
+
+    /* Stack the columns */
+    .main-content-container {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 30px;
+    }
+
+    /* Remove padding and border between columns */
+    .column1 {
+        padding-right: 0;
+    }
+    
+    .column2 {
+        padding-left: 0;
+        margin-top: 0;
+        border-left: none;
+        border-top: 2px solid #ccc; /* Add top border instead */
+        padding-top: 25px;
+    }
+    
+    /* Ensure card container is responsive */
+    .card-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
     }
 }
 
