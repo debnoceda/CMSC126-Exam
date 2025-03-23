@@ -368,7 +368,10 @@ body {
 
 /* Card Details Styling */
 .card-details {
-    padding: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 /* Username Styling */
@@ -402,7 +405,9 @@ body {
 }
 
 .list-details{
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .list-details p{
