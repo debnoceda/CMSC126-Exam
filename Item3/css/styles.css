@@ -3,6 +3,11 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
+    background-image: url('../images/bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #121212;
     margin: 0;
     padding: 0;
@@ -10,6 +15,17 @@ body {
     flex-direction: row;
     overflow-x: hidden;
     animation: fadeIn 0.8s ease-out forwards;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 @keyframes fadeIn {
@@ -27,7 +43,7 @@ body {
 *:focus {
     outline: 2px solid #000;
     outline-offset: 2px;
-    border-radius: 3px;
+    border-radius: 8px;
     transition: outline 0.2s ease-in-out;
 }
 
@@ -122,29 +138,11 @@ main {
     flex-grow: 1;
     width: 100%;
     max-height: 100%;
-    background-color: #f9f9f9;
-    background-image: url('../images/bg.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
     min-height: 100vh;
     position: relative;
 }
 
-/* Add an overlay to the background */
-main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(249, 249, 249, 0.85);
-    z-index: 0;
-}
-
-/* Ensure content sits above the overlay */
+/* Ensure content sits above the background */
 main > * {
     position: relative;
     z-index: 1;
@@ -156,13 +154,14 @@ main > * {
     padding: 40px;
     background: white;
     margin: 30px auto;
-    border-radius: 4px;
+    border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     max-width: 1200px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 }
 
 /* Show active exhibit when targeted with animation */
@@ -211,25 +210,26 @@ body:not(:has(:target)) .exhibit:first-of-type {
     background: white;
     padding: 30px;
     width: 45%;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .card:hover, .card:focus-within {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .card-image {
     position: relative;
     margin-bottom: 25px;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 8px;
     height: 300px;
     display: flex;
     align-items: center;
@@ -351,9 +351,9 @@ body:not(:has(:target)) .exhibit:first-of-type {
     background: #000;
     color: white;
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 50px;
     font-weight: 400;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -366,7 +366,7 @@ body:not(:has(:target)) .exhibit:first-of-type {
 .next:focus, .prev:focus, .restart:focus {
     background: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .next:focus, .prev:focus, .restart:focus {
@@ -408,7 +408,7 @@ body:not(:has(:target)) .exhibit:first-of-type {
         color: white;
         border: none;
         padding: 10px;
-        border-radius: 3px;
+        border-radius: 50%;
     }
 }
 
