@@ -319,7 +319,7 @@ body:not(:has(:target)) .exhibit:first-of-type {
 }
 
 .card p {
-    text-align: left;
+    text-align: justify;
     line-height: 1.8;
     color: #333;
     margin-top: 1rem;
